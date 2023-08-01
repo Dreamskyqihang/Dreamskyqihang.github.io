@@ -11,7 +11,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="给你 n 个非负整数 a1，a2，...，an，每个数...">
+  <meta name="description" content="题目给你 n 个非负整数 a1，a2，...，an，每...">
   <meta name="author" content="Return True">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -200,69 +200,28 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 20, 2020</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1451</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1394</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
         
-        <p>给你<code> n</code> 个非负整数 <code>a1，a2，...，an</code>，每个数代表坐标中的一个点<code> (i, ai) </code>。在坐标内画<code>n</code>条垂直线，垂直线<code> i </code>的两个端点分别为 <code>(i, ai)</code> 和<code> (i, 0)</code>。找出其中的两条线，使得它们与<code> x</code> 轴共同构成的容器可以容纳最多的水。<br><strong>说明：你不能倾斜容器，且<code> n</code> 的值至少为<code> 2</code>。</strong></p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你<code> n</code> 个非负整数 <code>a1，a2，...，an</code>，每个数代表坐标中的一个点<code> (i, ai) </code>。在坐标内画<code>n</code>条垂直线，垂直线<code> i </code>的两个端点分别为 <code>(i, ai)</code> 和<code> (i, 0)</code>。找出其中的两条线，使得它们与<code> x</code> 轴共同构成的容器可以容纳最多的水。<br><strong>说明：你不能倾斜容器，且<code> n</code> 的值至少为<code> 2</code>。</strong></p>
 <img src="/2020/04/20/max-area/max_area.webp" class="">
-<p>图中垂直线代表输入数组<code> [1,8,6,2,5,4,8,3,7]</code>。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为<code> 49</code>。<br><strong>示例：</strong></p>
-<blockquote>
+<p>图中垂直线代表输入数组<code> [1,8,6,2,5,4,8,3,7]</code>。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为<code> 49</code>。</p>
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><blockquote>
 <p>输入：<code>[1,8,6,2,5,4,8,3,7]</code><br>输出：<code>49</code></p>
 </blockquote>
-<p><strong>来源：LeetCode 第11题</strong><br><strong>相关企业：</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">公司</th>
-<th align="center">出现时间</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">百度</td>
-<td align="center">2020.04</td>
-</tr>
-<tr>
-<td align="center"><strong>解法：双指针</strong></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">时间复杂度：<code>O(n)</code></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">空间复杂度：<code>O(1)</code></td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">思路：</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">设置双指针<code> i,j</code> 分别位于容器壁两端，根据规则移动指针（后续说明），并且更新面积最大值<code> result</code>，直到 <code>i == j</code> 时返回 <code>result</code>。</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">指针移动规则与证明:</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>每次选定围成水槽两板高度<code> h[i]、h[i]</code>中的短板，向中间收窄1格。以下证明：</p>
+<h3 id="来源：LeetCode-第11题"><a href="#来源：LeetCode-第11题" class="headerlink" title="来源：LeetCode 第11题"></a>来源：LeetCode 第11题</h3><h3 id="解法：双指针"><a href="#解法：双指针" class="headerlink" title="解法：双指针"></a>解法：双指针</h3><p>时间复杂度：<code>O(n)</code><br>空间复杂度：<code>O(1)</code></p>
+<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>设置双指针<code> i,j</code> 分别位于容器壁两端，根据规则移动指针（后续说明），并且更新面积最大值<code> result</code>，直到 <code>i == j</code> 时返回 <code>result</code>。<br><strong>指针移动规则与证明:</strong><br>每次选定围成水槽两板高度<code> h[i]、h[i]</code>中的短板，向中间收窄1格。以下证明：</p>
 <ul>
 <li>设每一状态下水槽面积为 <code>S(i, j)(0 &lt;= i &lt; j &lt; n)</code>，由于水槽的实际高度由两板中的短板决定，则可得面积公式 <code>S(i, j) = min(h[i], h[j]) × (j - i)</code>。</li>
-<li>在每一个状态下，无论长板或短板收窄 1 格，都会导致水槽 底边宽度 −1：<br> 1.若向内移动短板，水槽的短板 <code>min(h[i], h[j])</code>可能变大，因此水槽面积 <code>S(i, j)</code>可能增大。<br>2.若向内移动长板，水槽的短板 <code>min(h[i], h[j])</code>不变或变小，下个水槽的面积一定小于当前水槽面积。<br>因此，向内收窄短板可以获取面积最大值。</li>
+<li>在每一个状态下，无论长板或短板收窄 1 格，都会导致水槽 底边宽度 −1：<br>  1.若向内移动短板，水槽的短板 <code>min(h[i], h[j])</code>可能变大，因此水槽面积 <code>S(i, j)</code>可能增大。<br>  2.若向内移动长板，水槽的短板 <code>min(h[i], h[j])</code>不变或变小，下个水槽的面积一定小于当前水槽面积。<br><strong>因此，向内收窄短板可以获取面积最大值。</strong></li>
 </ul>
-</blockquote>
-<p>换个角度理解：</p>
-<blockquote>
-<p>若不指定移动规则，所有移动出现的 <code>S(i, j)</code>的状态数为 <code>C(n, 2)</code>，即暴力枚举出所有状态。<br>在状态<code> S(i, j)</code>下向内移动短板至 <code>S(i + 1, j)</code>（假设<code> h[i] &lt; h[j]</code>），则相当于消去了 <code>S(i, j - 1), S(i, j - 2), ... , S(i, i + 1)</code>状态集合。而所有消去状态的面积一定 <code>&lt;= S(i, j)</code>;<br>短板高度：相比 <code>S(i, j)</code> 相同或更短<code>(&lt;= h[i])</code>;<br>底边宽度：相比 <code>S(i, j)</code> 更短。<br>因此所有消去的状态的面积都 <code>&lt; S(i, j)</code>。通俗的讲，我们每次向内移动短板，所有的消去状态都不会导致丢失面积最大值 。</p>
-</blockquote>
-<p>代码：</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs processing">def <span class="hljs-title function_">maxArea</span>(self, <span class="hljs-built_in">height</span>: List[<span class="hljs-type">int</span>]) -&gt; <span class="hljs-type">int</span>:<br>        <br>        i, j , result = <span class="hljs-number">0</span>, <span class="hljs-title function_">len</span>(<span class="hljs-built_in">height</span>) - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> i &lt; j:<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">height</span>[i] &lt; <span class="hljs-built_in">height</span>[j]:<br>                result = <span class="hljs-built_in">max</span>(result, <span class="hljs-built_in">height</span>[i] * (j - i))<br>                i += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                result = <span class="hljs-built_in">max</span>(result, <span class="hljs-built_in">height</span>[j] * (j - i))<br>                j -= <span class="hljs-number">1</span><br>        <br>        <span class="hljs-keyword">return</span> result<br></code></pre></td></tr></table></figure>
+<p><strong>换个角度理解：</strong></p>
+<p>若不指定移动规则，所有移动出现的 <code>S(i, j)</code>的状态数为 <code>C(n, 2)</code>，即暴力枚举出所有状态。<br>在状态<code> S(i, j)</code>下向内移动短板至 <code>S(i + 1, j)</code>（假设<code> h[i] &lt; h[j]</code>），则相当于消去了 <code>S(i, j - 1), S(i, j - 2), ... , S(i, i + 1)</code>状态集合。而所有消去状态的面积一定 <code>&lt;= S(i, j)</code>;<br>短板高度：相比 <code>S(i, j)</code> 相同或更短<code>(&lt;= h[i])</code>;<br>底边宽度：相比 <code>S(i, j)</code> 更短。<br>因此所有消去的状态的面积都 <code>&lt; S(i, j)</code>。通俗的讲，<strong>我们每次向内移动短板，所有的消去状态都不会导致丢失面积最大值</strong>。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs processing">def <span class="hljs-title function_">maxArea</span>(self, <span class="hljs-built_in">height</span>: List[<span class="hljs-type">int</span>]) -&gt; <span class="hljs-type">int</span>:<br>        <br>        i, j , result = <span class="hljs-number">0</span>, <span class="hljs-title function_">len</span>(<span class="hljs-built_in">height</span>) - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> i &lt; j:<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">height</span>[i] &lt; <span class="hljs-built_in">height</span>[j]:<br>                result = <span class="hljs-built_in">max</span>(result, <span class="hljs-built_in">height</span>[i] * (j - i))<br>                i += <span class="hljs-number">1</span><br>            <span class="hljs-keyword">else</span>:<br>                result = <span class="hljs-built_in">max</span>(result, <span class="hljs-built_in">height</span>[j] * (j - i))<br>                j -= <span class="hljs-number">1</span><br>        <br>        <span class="hljs-keyword">return</span> result<br></code></pre></td></tr></table></figure>
 
       </section>
       <section class="extra">
@@ -303,7 +262,7 @@
           
   <aside class="toc-wrap">
     <h3 class="toc-title">文章目录：</h3>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A5%E6%BA%90%EF%BC%9ALeetCode-%E7%AC%AC11%E9%A2%98"><span class="toc-text">来源：LeetCode 第11题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%EF%BC%9A%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-text">解法：双指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-text">代码：</span></a></li></ol>
   </aside>
 
         
